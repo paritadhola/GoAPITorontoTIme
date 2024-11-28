@@ -1,23 +1,18 @@
 version: '3.8'
 
 services:
- 
   go-timezone-api:
     build: .
     container_name: go-timezone-api
     ports:
-      - "8080:8080"
-    environment:
-      - DB_HOST=mysql
-      - DB_USER=root
-      - DB_PASSWORD=12345678
-      - DB_NAME=GoTimeZoneAPI
+      - "8081:8080"
+    env_file:
+      - .env
     depends_on:
       - mysql
     networks:
       - go-app-network
 
- 
   mysql:
     image: mysql:8.0
     container_name: mysql
@@ -37,3 +32,6 @@ networks:
 
 volumes:
   mysql-data:
+
+
+  
