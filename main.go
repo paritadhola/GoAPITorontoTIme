@@ -73,8 +73,6 @@ func getTimeZoneHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-	connectDB()
-
 	dbSrcName := "root:12345678@tcp(localhost:3306)/GoTimeZoneAPI"
 	db, err := sql.Open("mysql", dbSrcName)
 	if err != nil {

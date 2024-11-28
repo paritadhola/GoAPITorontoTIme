@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  # Go Application
+ 
   go-timezone-api:
     build: .
     container_name: go-timezone-api
@@ -17,7 +17,7 @@ services:
     networks:
       - go-app-network
 
-  # MySQL Database
+ 
   mysql:
     image: mysql:8.0
     container_name: mysql
